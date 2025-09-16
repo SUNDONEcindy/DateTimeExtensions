@@ -46,6 +46,15 @@ namespace DateTimeExtensions.Tests
             Assert.AreEqual(ChristianHolidays.Pentecost.Name, "Pentecostés");
             Assert.AreEqual(ChristianHolidays.PentecostMonday.Name, "Lunes de Pentecostés");
             Assert.AreEqual(GlobalHolidays.InternationalWorkersDay.Name, "Fiesta del Trabajo");
+
+            new CultureInfo("es-GT").SetCurrentUICultureInfo();
+            Assert.AreEqual("es-GT", CultureInfo.CurrentUICulture.Name);
+            Assert.AreEqual(ES_GTHolidayStrategy.ArmyDay.Name, "Día del Ejercito");
+            Assert.AreEqual(ES_GTHolidayStrategy.IndependenceDay.Name, "Día de la Independencia");
+            Assert.AreEqual(ES_GTHolidayStrategy.MothersDay.Name, "Día de la Madre");
+            Assert.AreEqual(ES_GTHolidayStrategy.RevolutionDay.Name, "Día de la Revolución");
+            Assert.AreEqual(ES_GTHolidayStrategy.AllSaintsDay.Name, "Día de Todos los Santos");
+
         }
     }
 }
