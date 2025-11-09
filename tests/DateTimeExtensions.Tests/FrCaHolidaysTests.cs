@@ -10,7 +10,7 @@ namespace DateTimeExtensions.Tests
     public class FrCaHolidaysTests
     {
         [Test]
-        public void can_get_stratery()
+        public void can_get_strategy()
         {
             var dateTimeCulture = new WorkingDayCultureInfo("fr-CA");
             var strategy = dateTimeCulture.LocateHolidayStrategy(dateTimeCulture.Name, null);

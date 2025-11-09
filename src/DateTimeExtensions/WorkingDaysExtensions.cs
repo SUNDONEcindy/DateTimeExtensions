@@ -175,10 +175,11 @@ namespace DateTimeExtensions
             IWorkingDayCultureInfo workingDayCultureInfo)
         {
             var holidays = new SortedDictionary<DateTime, Holiday>();
-            foreach (Holiday holiday in workingDayCultureInfo.GetHolidaysOfYear(day.Year))
+            var holidaysOfTheYear = workingDayCultureInfo.GetHolidaysOfYear(day.Year).ToList();
+            foreach (Holiday holiday in holidaysOfTheYear)
             {
                 var date = holiday.GetInstance(day.Year);
-                if (date.HasValue)
+                if (date.HasValue && !holidays.ContainsKey(date.Value))
                 {
                     holidays.Add(date.Value, holiday);
                 }
